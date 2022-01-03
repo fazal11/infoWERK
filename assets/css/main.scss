@@ -57,6 +57,9 @@ html {
 }
 .lg_medium {
   font-size: 24px;
+  @media (max-width:768px) {
+    font-size: 18px;
+  }
 }
 .large {
   font-size: 28px;
@@ -73,7 +76,12 @@ html {
 .font__56 {
   font-size: 56px;
 }
-
+.color2{
+  color: #262626;
+}
+.color1{
+  color: #7f735d;
+}
 .brown_light{
   background: #3b3b3b;
 }
@@ -115,6 +123,9 @@ html {
 .slides_logo {
   width: 200px;
 }
+.light_black {
+  background-color: rgba(0, 0, 0, 0.479);
+}
 // header 
 header {
   position: absolute;
@@ -123,11 +134,14 @@ header {
   z-index: 1;
   .navbar-collapse {
     position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(95%);
+    right: 0;
+    left: 0;
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
   }
   .navbar-nav {
+    justify-content: end;
     .nav-link {
       font-size: 18px;
       color: white !important;
@@ -148,12 +162,24 @@ header {
 .banner {
   position: relative;
   &__text {
-    background-image: url(..//img/back_100+.svg);
+    background-image: url(..//img/logo-sign.jpg);
     background-repeat: no-repeat;
-    background-position-y: 50%;
-    background-size: 100%;
+    background-position-y: center;
+    background-size: 36%;
+    background-position-x: 30%;
+    justify-content:end;
     p {
       font-size: 45px;
+    }
+  }
+  &.custom-banner{
+    .banner__text{
+      background-image: none;
+      p{
+        span{
+          font-size: 22px;
+        }
+      }
     }
   }
 }
@@ -224,8 +250,15 @@ header {
   .category-image>:first-child:before {bottom:0;right:0;border-width: 0 2px 2px 0}
   .category-image>:first-child:after {bottom:0;left:0;border-width: 0 0 2px 2px}
 }
+.header-items{
+  align-items: end;
+  margin-top: -248px;
+  @media (max-width: 991px) {
+    margin-top: 0;
+  }
+}
 .banner_card {
-  margin-top: -123%;
+  // margin-top: -123%;
   .card-img {
     position: relative;
   }
@@ -371,5 +404,66 @@ header {
   .article_img {
     width: 40%;
     margin: auto;
+  }
+}
+.secondary-menu-content{
+  position: relative;
+  z-index: 1;
+  background-color: #262626;
+  padding: 1rem;
+  margin-bottom: .5rem;
+  ul{
+    list-style: none;
+    justify-content: space-evenly;
+    li{
+      position: relative;
+      &:after{
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 16px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: #fff;
+        right: -31px;
+      }
+      &:last-child{
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+}
+.section-one{
+  position: relative;
+  margin-bottom: 12rem;
+  .text-content{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .item-listing{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -150px;
+
+  }
+}
+.card{
+  font-size: 14px;
+}
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before{
+  color: #fff;
+}
+footer{
+  @extend .color1;
+  a.text-black{
+    @extend .color1;
   }
 }
